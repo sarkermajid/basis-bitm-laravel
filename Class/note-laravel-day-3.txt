@@ -1,0 +1,2 @@
+## Laravel a form submit korar jonno @csrf token pass kora hoy. eta laravel er nijesso security key.
+## form submit korar pore sob data controller er Request

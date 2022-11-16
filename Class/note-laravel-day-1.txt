@@ -1,0 +1,33 @@
+## Need to Learn
+1. Laravel install and run
+2. request life cycle
+3. routing
+4. mastering
+5. crud
+6. middleware
+7. working with package
+
+#information :
+Parser -> check syntax
+compiler -> interpret kore (onubad kore) (php,python) / c# and java build kore.
+
+
+# Laravel 2 vabe install kora jay :
+1. composer :
+composer create-project laravel/laravel example-app
+2. laravel installer :
+composer global require laravel/installer
+laravel new example-app
+
+# blade is a template engine. chaile onno template engine o amra use krte pare tobe seta configure kore nea lagbe.
+#laravel route 2 vabe declare kora jay:
+1. route('') ( adike route er name ta use kora hoy {{}} er vitore.
+2. url('') (adike route er moode url use kra lagbe {{}} er vitore.
+
+# MVC pattern : eta ekta code er sturcture. M a model, V te view, C te controller.
+jokon kno user req pathabe tokon route theke jabe controller a... controller a sob logical kaj hoy.. controller jodi dekhe
+kno data pathano lagbe tokon controller req pathay model ar kache thn model theke data controller er kache ase thn view
+er kache jay.. controller and model sob e class.
+MVC lifecycle ==> DB-->M-->C-->V
+
+# web.php simple http request handle korar jonno use kora hoy.

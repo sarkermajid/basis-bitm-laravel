@@ -1,0 +1,13 @@
+# joto doroner link kora lagbe sob public/index.php er sapekkhe.
+onk a index.php public theke ber kore ene kaj kore.. bt ata worst and security nosto hoy.
+
+# laravel a {{ " " }} er mane hocche php te <?php echo "" ?>;
+# .blade er ekta syntax hocche {{ '' }}
+# asset('/') eta build in function. er kaj hocche automatic public folder a niye jabe je dike e thaki na kn.
+
+## Mastaring
+
+master theke data extends kore home a ana jabe and home theke o data pathano jabe master a yield kore (like child to parent)
+syntax : @extends('')
+
+syntax : yield('name') eta thakbe master a.. r onno page a thakbe @section('name') content @endsection
