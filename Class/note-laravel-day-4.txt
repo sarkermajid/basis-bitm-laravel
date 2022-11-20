@@ -1,0 +1,3 @@
+## database er sathe kaj korar jonno 2 ta class ase
+1. query builder (model chara kaj korete pare, eta mvc na tobe onk powerfull)
+2. ORM (every table needs a model, eta mvc)

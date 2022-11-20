@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public $categories;
-    public function getAllCategory()
+    public function index($id)
     {
-        $this->categories = Category::getAllCategory();
-        return view('master', ['categories'=>$this->categories]);
+        $this->categories = Product::getProductByCategory($id);
+        return view('category', ['categories' => $this->categories]);
     }
 }

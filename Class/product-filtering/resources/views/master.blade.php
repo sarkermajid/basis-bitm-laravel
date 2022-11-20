@@ -1,3 +1,11 @@
+@php
+use App\Models\Category;
+use App\Models\Brand;
+$categories = new Category();
+$categories = $categories->getAllCategory();
+$brands = new Brand();
+$brands = $brands->getAllBrand();
+@endphp
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +13,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Website</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('/') }}css/bootstrap.css">
     <link rel="stylesheet" href="{{ asset('/') }}css/all.css">
     <link rel="stylesheet" href="{{ asset('/') }}css/style.css">
@@ -18,21 +26,26 @@
         <ul class="navbar-nav">
             <li><a href="{{ route('home') }}" class="nav-link">Home</a></li>
             <li class="dropdown">
-                <a href="{{ route('category') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Catrgory</a>
+                <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Catrgory</a>
                 <ul class="dropdown-menu">
-                    <li><a href="" class="dropdown-item">Category 1</a></li>
+                    @foreach($categories as $category)
+                    <li><a href="{{ route('category', ['id' =>$category['id']]) }}" class="dropdown-item">{{ $category['name'] }}</a></li>
+                    @endforeach
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="{{ route('brand') }}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Brand</a>
+                <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Brand</a>
                 <ul class="dropdown-menu">
-                    <li><a href="" class="dropdown-item">Brand 1</a></li>
+                    @foreach($brands as $brand)
+                    <li><a href="{{ route('brand', ['id'=>$brand['brand_id']]) }}" class="dropdown-item">{{ $brand['brand_name'] }}</a></li>
+                    @endforeach
                 </ul>
             </li>
         </ul>
     </div>
 </nav>
 
+@yield('body')
 
 <script src="{{ asset('/') }}js/bootstrap.bundle.js"></script>
 <script src="{{ asset('/') }}js/jquery-3.6.1.min.js"></script>

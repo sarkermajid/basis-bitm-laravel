@@ -16,7 +16,7 @@ use App\Http\Controllers\BrandConroller;
 */
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
-Route::get('/cateogry', [CategoryController::class, 'getAllCategory'])->name('category');
-Route::get('/brand', [BrandConroller::class, 'getAllBrand'])->name('brand');
+Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category');
+Route::get('/brand/{id}', [BrandConroller::class, 'index'])->name('brand');
 
 //Route::get('/', [ProductController::class, 'index'])->name('home');

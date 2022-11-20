@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    public static $categoryProducts = [];
+    public static $productByCategory=[];
 
     public static function getAllProduct()
     {
@@ -112,5 +114,19 @@ class Product extends Model
                 'image'=>'product11.jpg'
             ],
         ];
+    }
+
+    public static function getProductByCategory($id)
+    {
+        self::$categoryProducts = self::getAllProduct();
+        foreach (self::$categoryProducts as $categoryProduct)
+        {
+            if($categoryProduct['category_id'] == $id)
+            {
+                array_push(self::$productByCategory, $categoryProduct);
+            }
+
+            return self::$productByCategory;
+        }
     }
 }

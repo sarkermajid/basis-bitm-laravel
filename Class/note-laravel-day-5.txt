@@ -1,0 +1,10 @@
+day 5 laravel.
+#view load hobe controller er throw te view er jodi database lage tahole req krbe controller k tarpor controller req krbe
+model k thn model data pathabe. route kokono view k load kore nah.. route req kore controller k thn controller view k
+load kore.
+
+#factory and seeders => ai 2 ta option (class) diye dummy data nia asa hoy.
+factory user er sathe connected user model and model er sathe connected users table.
+factory make korar por seeders a jaia amount dite hobe thn command dite hobe php artisan db:seed
+
+factory create korar cmd -> php artisan make:factory (factoryname) like ProductFactory
