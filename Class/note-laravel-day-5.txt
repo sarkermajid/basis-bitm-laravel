@@ -4,7 +4,9 @@ model k thn model data pathabe. route kokono view k load kore nah.. route req ko
 load kore.
 
 #factory and seeders => ai 2 ta option (class) diye dummy data nia asa hoy.
+factory create korar cmd
+=> php artisan make:factory (factoryname) like ProductFactory
 factory user er sathe connected user model and model er sathe connected users table.
-factory make korar por seeders a jaia amount dite hobe thn command dite hobe php artisan db:seed
+factory make korar por seeders a jaia amount dite hobe thn command dite hobe
+=> php artisan db:seed
 
-factory create korar cmd -> php artisan make:factory (factoryname) like ProductFactory

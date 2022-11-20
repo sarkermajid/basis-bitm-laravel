@@ -9,7 +9,8 @@
                     <div class="card bg-dark text-white">
                         <div class="card-header">All Product Information</div>
                         <div class="card-body">
-                            <h3 class="text-danger text-center">{{ Session::get('message') }}</h3>
+                            <h3 class="text-success text-center">{{ Session::get('message') }}</h3>
+                            <h3 class="text-danger text-center">{{ Session::get('delete_message') }}</h3>
                             <table class="table table-bordered text-white">
                                 <thead>
                                 <tr>
@@ -28,8 +29,8 @@
                                         <td>{{ $product->price }}</td>
                                         <td><img src="{{ asset($product->image) }}" alt="" height="50" width="70"></td>
                                         <td>
-                                            <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                            <a href="" onclick="return confirm('Are you sure to delete this ?')" class="btn btn-danger btn-sm">Delete</a>
+                                            <a href="{{ route('product.edit', ['id'=>$product->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="{{ route('product.delete', ['id'=>$product->id]) }}" onclick="return confirm('Are you sure to delete this ?')" class="btn btn-danger btn-sm">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
