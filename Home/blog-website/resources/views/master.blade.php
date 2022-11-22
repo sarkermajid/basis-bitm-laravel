@@ -16,7 +16,7 @@
         <div class="container">
             <a href="" class="navbar-brand">Blog Website</a>
             <ul class="navbar-nav">
-                <li><a href="" class="nav-link">Home</a></li>
+                <li><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                 <li class="dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Category</a>
                     <ul class="dropdown-menu">
@@ -31,8 +31,6 @@
                         <li><a href="{{ route('blog.index') }}" class="dropdown-item">Manage Blog</a></li>
                     </ul>
                 </li>
-                <li><a href="" class="nav-link">About</a></li>
-                <li><a href="" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>

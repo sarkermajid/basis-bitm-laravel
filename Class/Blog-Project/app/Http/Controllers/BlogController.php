@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
 
-    private $categories;
+    private $categories, $blog, $blogs;
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +17,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $this->categories = Category::all();
-        return view('blog.index', ['categories'=>$this->categories]);
+        $this->blogs = Blog::all();
+        return view('blog.manage',['blogs'=>$this->blogs]);
     }
 
     /**
@@ -28,7 +28,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        $this->categories = Category::all();
+        return view('blog.index', ['categories'=>$this->categories]);
     }
 
     /**
@@ -39,7 +40,8 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Blog::addBlog($request);
+        return redirect('/blog')->with('message','Blog add successfully');
     }
 
     /**
@@ -50,7 +52,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $this->blog = Blog::find($id);
+        return view('blog.detail', ['blog'=>$this->blog]);
     }
 
     /**
@@ -61,7 +64,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->blog = Blog::find($id);
+        $this->categories = Category::all();
+        return view('blog.edit', ['blog'=>$this->blog, 'categories'=>$this->categories]);
     }
 
     /**
@@ -73,7 +78,8 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Blog::updateBlog($request, $id);
+        return redirect('/blog')->with('message','Blog update successfully');
     }
 
     /**
@@ -84,6 +90,7 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Blog::deleteBlog($id);
+        return redirect('/blog')->with('message_delete', 'Blog deleted successfully');
     }
 }

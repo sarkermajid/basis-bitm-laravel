@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
 
-    private $categories, $blogs;
+    private $categories, $blogs, $blog;
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +52,8 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-
+       $this->blog = Blog::find($id);
+       return view('blog.view', ['blog'=>$this->blog]);
     }
 
     /**
@@ -63,7 +64,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->blog = Blog::find($id);
+        $this->categories = Category::all();
+        return view('blog.edit', ['blog'=>$this->blog, 'categories'=>$this->categories]);
     }
 
     /**
@@ -75,7 +78,8 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Blog::updateBlog($request,$id);
+        return redirect('/blog')->with('message', 'Blog update successfully');
     }
 
     /**
@@ -86,6 +90,7 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Blog::deleteBlog($id);
+        return redirect('/blog')->with('message_delete', 'Blog delete successfully');
     }
 }

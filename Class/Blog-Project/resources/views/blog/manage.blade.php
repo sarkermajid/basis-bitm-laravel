@@ -15,11 +15,10 @@
                                 <thead>
                                 <tr>
                                     <th>SL No</th>
+                                    <th>Category Name</th>
                                     <th>Title</th>
-                                    <th>Short Description</th>
-                                    <th>Long Description</th>
-                                    <th>Status</th>
                                     <th>Image</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -27,18 +26,17 @@
                                 @foreach($blogs as $blog)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $blog->category->name }}</td>
                                         <td>{{ $blog->title }}</td>
-                                        <td>{{ substr($blog->short_description, '0', '50').'...' }}</td>
-                                        <td>{{ substr($blog->long_description, '0', '100').'...' }}</td>
-                                        <td>{{ $blog->status == 1 ? 'Published' : 'Unpublished' }}</td>
                                         <td><img src="{{ asset($blog->image) }}" alt="" height="50" width="70"></td>
+                                        <td>{{ $blog->status == 1 ? 'published' : 'Unpublished'}}</td>
                                         <td>
-                                            <a href="{{ route('blog.show', $blog->id) }}" class="btn btn-info btn-sm d-inline-block">view</a>
-                                            <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-primary btn-sm d-inline-block">Edit</a>
-                                            <form action="{{ route('blog.destroy', $blog->id) }}" method="post">
-                                                @csrf
-                                                @method('delete')
-                                                <button onclick="return confirm('Are you sure to delete this ?')" class="btn btn-danger btn-sm d-inline-block">Delete</button>
+                                            <a href="{{ route('blog.show', $blog->id) }}" class="btn btn-info btn-sm">Details</a>
+                                            <a href="{{ route('blog.edit', $blog->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                            <form action="{{ route('blog.destroy', $blog->id) }} " method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" onclick="return confirm('Are you sure to delete this ?')" class="btn btn-danger btn-sm">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
