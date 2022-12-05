@@ -11,6 +11,7 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
+                            <th>SL</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -20,19 +21,21 @@
                         </tr>
                         </thead>
 
-
                         <tbody>
+                        @foreach($teachers as $teacher)
                         <tr>
-                            <td></td>
-                            <td>Habib</td>
-                            <td>Habib@gmail.com</td>
-                            <td>65456151</td>
-                            <td>Dhaka,Bangladesh</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td><img src="{{ asset($teacher->image) }}" alt="" height="50" width="50"></td>
+                            <td>{{ $teacher->name }}</td>
+                            <td>{{ $teacher->email }}</td>
+                            <td>{{ $teacher->mobile }}</td>
+                            <td>{{ $teacher->address }}</td>
                             <td>
-                                <a href="" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                <a href="" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a href="{{ route('teacher.edit', $teacher->id) }}" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('teacher.delete', $teacher->id) }}" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
