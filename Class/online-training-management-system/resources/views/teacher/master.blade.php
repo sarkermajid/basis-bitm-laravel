@@ -19,6 +19,10 @@
 
     <!-- Responsive datatable examples -->
     <link href="{{ asset('/') }}/admin/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Summernote css -->
+    <link href="{{ asset('/') }}admin/assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Bootstrap Css -->
     <link href="{{ asset('/') }}admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -447,38 +451,16 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
-
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-layout"></i>
-                            <span>Teacher Module</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{ route('teachers.add') }}">Add Teacher</a></li>
-                            <li><a href="{{ route('teachers.manage') }}">Manage Teacher</a></li>
-                        </ul>
-                    </li>
-
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-store"></i>
                             <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.html">Manage Course</a></li>
+                            <li><a href="{{ route('course.add') }}">Add Course</a></li>
+                            <li><a href="{{ route('course.manage') }}">Manage Course</a></li>
                         </ul>
                     </li>
-
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-bitcoin"></i>
-                            <span>Student Module</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="crypto-wallet.html">Manage Student</a></li>
-                        </ul>
-                    </li>
-
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-envelope"></i>
@@ -488,27 +470,23 @@
                             <li><a href="email-inbox.html">Manage Enroll</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-receipt"></i>
-                            <span>User Module</span>
+                            <i class="bx bx-bitcoin"></i>
+                            <span>Student Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="invoices-list.html">Add User</a></li>
-                            <li><a href="invoices-detail.html">Manage User</a></li>
+                            <li><a href="crypto-wallet.html">Manage Student</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-briefcase-alt-2"></i>
-                            <span>Setting Module</span>
+                            <span>My Account</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="projects-grid.html">Manage Company</a></li>
-                            <li><a href="projects-list.html">Manage About Us</a></li>
-                            <li><a href="projects-list.html">Manage Contact</a></li>
+                            <li><a href="projects-grid.html">Manage Account</a></li>
+                            <li><a href="projects-list.html">Change Password</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -719,7 +697,11 @@
 <script src="{{ asset('/') }}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
 
 <script src="{{ asset('/') }}admin/assets/js/pages/dashboard.init.js"></script>
+<!-- Summernote js -->
+<script src="{{ asset('/') }}admin/assets/libs/summernote/summernote-bs4.min.js"></script>
 
+<!-- init js -->
+<script src="{{ asset('/') }}admin/assets/js/pages/form-editor.init.js"></script>
 <!-- App js -->
 <script src="{{ asset('/') }}admin/assets/js/app.js"></script>
 </body>

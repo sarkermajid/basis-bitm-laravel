@@ -22,8 +22,7 @@ class TeacherController extends Controller
 
     public function manage()
     {
-        $this->teachers = Teacher::all();
-        return view('admin.teacher.manage',['teachers'=>$this->teachers]);
+        return view('admin.teacher.manage',['teachers'=>Teacher::orderBy('id','desc')->get()]);
     }
 
     public function edit($id)
