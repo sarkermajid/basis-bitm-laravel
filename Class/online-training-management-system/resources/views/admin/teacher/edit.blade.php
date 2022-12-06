@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h4 class="card-title mb-4">Update Teacher Form</h4>
                     <p class="text-center text-success h4">{{ Session::get('message') }}</p>
-                    <form action="{{ route('teacher.update',$teacher->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('teacher.update',['id'=>$teacher->id]) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Teacher name</label>
@@ -36,7 +36,7 @@
                         <div class="form-group row mb-4">
                             <label for="horizontal-image-input" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <img src="{{ asset($teacher->image) }}" height="70" width="70" class="mb-3" alt="">
+                                <img src="{{ asset($teacher->image) }}" height="70" width="70" class="mb-3" alt="{{ $teacher->name }}">
                                 <input type="file" class="form-control-file" id="horizontal-image-input" name="image">
                             </div>
                         </div>

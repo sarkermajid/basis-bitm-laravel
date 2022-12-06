@@ -31,8 +31,8 @@
                             <td>{{ $teacher->mobile }}</td>
                             <td>{{ $teacher->address }}</td>
                             <td>
-                                <a href="{{ route('teacher.edit', $teacher->id) }}" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
-                                <a href="{{ route('teacher.delete', $teacher->id) }}" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i></a>
+                                <a href="{{ route('teacher.edit', ['id'=>$teacher->id]) }}" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('teacher.delete', ['id'=>$teacher->id]) }}" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach
