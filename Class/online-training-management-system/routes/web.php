@@ -7,6 +7,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminCourseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,6 +47,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('/category/edit/{id}',[CategoryController::class, 'edit'])->name('category.edit');
     Route::post('/category/update/{id}',[CategoryController::class, 'update'])->name('category.update');
     Route::get('/category/delete/{id}',[CategoryController::class, 'delete'])->name('category.delete');
+
+    // Course Route
+    Route::get('admin/course/manage',[AdminCourseController::class,'index'])->name('admin.course.manage');
+    Route::get('admin/course/detail/{id}',[AdminCourseController::class,'detail'])->name('admin.course.detail');
+    Route::get('admin/course/status/{id}',[AdminCourseController::class,'status'])->name('admin.course.status');
+    Route::get('admin/course/offer-status/{id}',[AdminCourseController::class,'offer-status'])->name('admin.course.offer-status');
+    Route::get('admin/course/delete/{id}',[AdminCourseController::class,'delete'])->name('admin.course.delete');
 });
 
 // Teacher Dashboard Route
