@@ -26,6 +26,7 @@ class Category extends Model
         self::$category = new Category();
         self::$category->name           = $request->name;
         self::$category->description    = $request->description;
+        self::$category->status         = $request->status;
         self::$category->image          = self::getImageUrl($request);
         self::$category->save();
     }
@@ -48,6 +49,7 @@ class Category extends Model
         }
         self::$category->name           = $request->name;
         self::$category->description    = $request->description;
+        self::$category->status         = $request->status;
         self::$category->image          = self::$imageUrl;
         self::$category->save();
     }

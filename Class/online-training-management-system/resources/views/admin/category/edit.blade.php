@@ -21,7 +21,14 @@
                                 <textarea type="text" class="form-control" id="horizontal-description-input" name="description">{{ $category->description }}</textarea>
                             </div>
                         </div>
-
+                        <div class="form-group row mb-4">
+                            <label for="horizontal-description-input" class="col-sm-3 col-form-label">Category Description</label>
+                            <div class="col-sm-9">
+                                <label for=""><input type="radio" value="1" name="status" {{ $category->status == 1 ? 'Checked' : '' }}> Published</label>
+                                &nbsp;
+                                <label for=""><input type="radio" value="0" name="status" {{ $category->status == 0 ? 'Checked' : '' }}> Unpublished</label>
+                            </div>
+                        </div>
                         <div class="form-group row mb-4">
                             <label for="horizontal-image-input" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">

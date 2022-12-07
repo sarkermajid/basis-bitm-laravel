@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h4 class="card-title mb-4">Add Course Form</h4>
                     <p class="text-center text-success h4">{{ Session::get('message') }}</p>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('course.create') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row mb-4">
                             <label for="horizontal-category-input" class="col-sm-3 col-form-label">Course Category</label>
@@ -15,7 +15,7 @@
                                 <select name="category_id" class="form-control">
                                     <option value=""> -- Select Course Category -- </option>
                                     @foreach($categories as $category)
-                                    <option value="">{{ $category->name }}</option>
+                                    <option value="{{$category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -41,13 +41,13 @@
                         <div class="form-group row mb-4">
                             <label for="horizontal-starting_date-input" class="col-sm-3 col-form-label">Starting Date</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" id="horizontal-starting_date-input" name="fee">
+                                <input type="date" class="form-control" id="horizontal-starting_date-input" name="starting_date">
                             </div>
                         </div>
                         <div class="form-group row mb-4">
                             <label for="horizontal-fee-input" class="col-sm-3 col-form-label">Course Fee</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="horizontal-fee-input" name="fee">
+                                <input type="number" class="form-control" id="horizontal-fee-input" name="fee">
                             </div>
                         </div>
                         <div class="form-group row mb-4">

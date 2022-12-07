@@ -15,6 +15,7 @@
                             <th>Image</th>
                             <th>Category Name</th>
                             <th>Category Description</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -26,6 +27,7 @@
                                 <td><img src="{{ asset($category->image) }}" alt="" height="50" width="50"></td>
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->description }}</td>
+                                <td>{{ $category->status == 1 ? 'Published' : 'Unpublished' }}</td>
                                 <td>
                                     <a href="{{ route('category.edit', ['id'=>$category->id]) }}" class="btn btn-outline-primary btn-sm"><i class="fa fa-edit"></i></a>
                                     <a href="{{ route('category.delete', ['id'=>$category->id]) }}" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i></a>
