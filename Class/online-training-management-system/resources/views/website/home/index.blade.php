@@ -52,42 +52,21 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/s1.jpg" alt="" class="">
+                @foreach($recent_courses as $recent_course)
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100">
+                        <img src="{{ asset($recent_course->image) }}" alt="" class="">
                         <div class="card-body">
-                            <h4>PHP With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10-01-2023</p>
+                            <h4>{{ $recent_course->title }}</h4>
+                            <p class="mb-0">Price: {{ $recent_course->fee }} BDT</p>
+                            <p class="mb-0">Starting Date: {{ $recent_course->starting_date }}</p>
+                            <p class="mb-0">Author: {{ $recent_course->teacher->name }}</p>
                             <hr/>
                             <a href="{{ route('training.detail') }}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/s1.jpg" alt="" class="">
-                        <div class="card-body">
-                            <h4>PHP With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10-01-2023</p>
-                            <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/s1.jpg" alt="" class="">
-                        <div class="card-body">
-                            <h4>PHP With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10-01-2023</p>
-                            <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

@@ -52,7 +52,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('admin/course/manage',[AdminCourseController::class,'index'])->name('admin.course.manage');
     Route::get('admin/course/detail/{id}',[AdminCourseController::class,'detail'])->name('admin.course.detail');
     Route::get('admin/course/status/{id}',[AdminCourseController::class,'status'])->name('admin.course.status');
-    Route::get('admin/course/offer-status/{id}',[AdminCourseController::class,'offer-status'])->name('admin.course.offer-status');
+    Route::get('admin/course/offer-status/{id}',[AdminCourseController::class,'offerStatus'])->name('admin.course.offer-status');
+    Route::post('admin/course/offer-create/{id}',[AdminCourseController::class,'offerCreate'])->name('admin.course.offer-create');
     Route::get('admin/course/delete/{id}',[AdminCourseController::class,'delete'])->name('admin.course.delete');
 });
 
@@ -68,4 +69,3 @@ Route::get('course/manage',[CourseController::class, 'manage'])->name('course.ma
 Route::get('course/edit/{id}',[CourseController::class, 'edit'])->name('course.edit');
 Route::post('course/update/{id}',[CourseController::class, 'update'])->name('course.update');
 Route::get('course/delete/{id}',[CourseController::class, 'delete'])->name('course.delete');
-

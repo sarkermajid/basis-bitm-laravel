@@ -45,4 +45,6 @@ class CourseController extends Controller
         Course::deleteCourse($id);
         return redirect()->back()->with('message_delete','Course delete successfully');
     }
+
+
 }
