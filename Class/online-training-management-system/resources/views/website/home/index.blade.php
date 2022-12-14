@@ -47,6 +47,36 @@
             <div class="row bg-dark">
                 <div class="col">
                     <div class="card card-body border-dark text-center text-uppercase">
+                        <h3>Offer Courses</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                @foreach($offer_courses as $offer_course)
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <img src="{{ asset($offer_course->offer_image) }}" alt="" class="">
+                            <div class="card-body">
+                                <a href="{{ route('training.detail',['id'=>$offer_course->id]) }}" class="text-decoration-none text-dark"><h4>{{ $offer_course->title }}</h4></a>
+                                <p class="mb-0">Price: {{ $offer_course->offer_fee }} BDT</p>
+                                <del class="mb-0 text-danger">Regular Price: {{ $offer_course->fee }} BDT</del>
+                                <p class="mb-0">Last Date: {{ $offer_course->offer_date }}</p>
+                                <p class="mb-0">Author: {{ $offer_course->teacher->name }}</p>
+                                <hr/>
+                                <a href="{{ route('training.detail',['id'=>$offer_course->id]) }}" class="btn btn-success">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row bg-dark">
+                <div class="col">
+                    <div class="card card-body border-dark text-center text-uppercase">
                         <h3>Recent Published Course</h3>
                     </div>
                 </div>
@@ -57,12 +87,12 @@
                     <div class="card h-100">
                         <img src="{{ asset($recent_course->image) }}" alt="" class="">
                         <div class="card-body">
-                            <h4>{{ $recent_course->title }}</h4>
+                            <a href="{{ route('training.detail',['id'=>$recent_course->id]) }}" class="text-decoration-none text-dark"><h4>{{ $recent_course->title }}</h4></a>
                             <p class="mb-0">Price: {{ $recent_course->fee }} BDT</p>
                             <p class="mb-0">Starting Date: {{ $recent_course->starting_date }}</p>
                             <p class="mb-0">Author: {{ $recent_course->teacher->name }}</p>
                             <hr/>
-                            <a href="{{ route('training.detail') }}" class="btn btn-success">Read More</a>
+                            <a href="{{ route('training.detail',['id'=>$recent_course->id]) }}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>

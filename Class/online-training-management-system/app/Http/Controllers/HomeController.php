@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
@@ -10,6 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('website.home.index',[
+            'offer_courses' => Course::where('offer_status',1)->orderBy('id','desc')->take(3)->get(),
             'recent_courses' => Course::where('status',1)->orderBy('id','desc')->take(8)->get(),
         ]);
     }
@@ -19,19 +21,19 @@ class HomeController extends Controller
         return view('website.about.index');
     }
 
-    public function categoryTraining()
+    public function categoryTraining($id)
     {
-        return view('website.category.index');
+        return view('website.category.index',['courses'=>Course::where('category_id',$id)->orderBy('id','desc')->get()]);
     }
 
     public function allTraining()
     {
-        return view('website.training.index',['courses'=>Course::where('status',1)->orderBy('id','desc')->get()]);
+        return view('website.training.index',['courses'=>Course::where('status',1)->orderBy('id','desc')->simplepaginate(4)]);
     }
 
-    public function trainingDetail()
+    public function trainingDetail($id)
     {
-        return view('website.training.detail');
+        return view('website.training.detail',['course'=>Course::find($id)]);
     }
 
     public function contact()

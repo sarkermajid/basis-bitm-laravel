@@ -22,16 +22,23 @@
                         <div class="card h-100">
                             <img src="{{ asset($course->image) }}" alt="" class="">
                             <div class="card-body">
-                                <h4>{{ $course->title }}</h4>
+                                <a href="{{ route('training.detail',['id'=>$course->id]) }}" class="text-decoration-none text-dark"><h4>{{ $course->title }}</h4></a>
                                 <p class="mb-0">Price: {{ $course->fee }} BDT</p>
                                 <p class="mb-0">Starting Date: {{ $course->starting_date }}</p>
                                 <p class="mb-0">Author: {{ $course->teacher->name }}</p>
                                 <hr/>
-                                <a href="{{ route('training.detail') }}" class="btn btn-success">Read More</a>
+                                <a href="{{ route('training.detail',['id'=>$course->id]) }}" class="btn btn-success">Read More</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="float-end">
+                        {{ $courses->links() }}
+                    </div>
+                </div>
             </div>
         </div>
     </section>

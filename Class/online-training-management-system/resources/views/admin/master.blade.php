@@ -450,7 +450,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-layout"></i>
+                            <i class="bx bx-user-plus"></i>
                             <span>Teacher Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
@@ -461,7 +461,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-store"></i>
+                            <i class="bx bxl-play-store"></i>
                             <span>Category Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
@@ -472,7 +472,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-store"></i>
+                            <i class="bx bx-list-check"></i>
                             <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
@@ -482,7 +482,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-bitcoin"></i>
+                            <i class="bx bx-store"></i>
                             <span>Student Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
@@ -492,7 +492,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-envelope"></i>
+                            <i class="bx bx-edit"></i>
                             <span>Enroll Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
@@ -502,7 +502,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-receipt"></i>
+                            <i class="bx bx-user-check"></i>
                             <span>User Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
@@ -513,7 +513,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="bx bx-briefcase-alt-2"></i>
+                            <i class="bx bx-wrench"></i>
                             <span>Setting Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">

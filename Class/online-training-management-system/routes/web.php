@@ -8,6 +8,7 @@ use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdminCourseController;
+use App\Http\Controllers\EnrollController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,12 +23,15 @@ use App\Http\Controllers\AdminCourseController;
 // User Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about');
-Route::get('/training-category', [HomeController::class, 'categoryTraining'])->name('training.category');
+Route::get('/training-category/{id}', [HomeController::class, 'categoryTraining'])->name('training.category');
 Route::get('/all-training', [HomeController::class, 'allTraining'])->name('training.all');
-Route::get('/training-detail', [HomeController::class, 'trainingDetail'])->name('training.detail');
+Route::get('/training-detail/{id}', [HomeController::class, 'trainingDetail'])->name('training.detail');
 Route::get('/contact-us', [HomeController::class, 'contact'])->name('contact');
 Route::get('/login-registration', [HomeController::class, 'LoginRegistration'])->name('login-registration');
 
+//Enroll Route
+Route::get('/training-enroll/{id}',[EnrollController::class,'index'])->name('training.enroll');
+Route::post('/training-new-enroll/{id}',[EnrollController::class,'newEnroll'])->name('training.new-enroll');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

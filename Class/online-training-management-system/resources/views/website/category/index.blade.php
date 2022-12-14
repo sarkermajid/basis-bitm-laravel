@@ -17,42 +17,20 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-md-4 mb-3">
+                @foreach($courses as $course)
+                <div class="col-md-3 mb-3">
                     <div class="card">
-                        <img src="{{ asset('/') }}website/img/s1.jpg" alt="" class="">
+                        <img src="{{ asset($course->image) }}" alt="" class="">
                         <div class="card-body">
-                            <h4>PHP With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10-01-2023</p>
+                            <h4>{{ $course->title }}</h4>
+                            <p class="mb-0">{{ $course->fee }}</p>
+                            <p>Starting Date: {{ $course->starting_date }}</p>
                             <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
+                            <a href="{{ route('training.detail',['id'=>$course->id]) }}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/s1.jpg" alt="" class="">
-                        <div class="card-body">
-                            <h4>PHP With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10-01-2023</p>
-                            <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/s1.jpg" alt="" class="">
-                        <div class="card-body">
-                            <h4>PHP With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10-01-2023</p>
-                            <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
